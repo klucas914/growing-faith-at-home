@@ -1,0 +1,9 @@
+<%= form_for([@week, @week.creative_responses.build]) do |f| %>
+  <div class="form-group"> 
+    <%= f.label :Creative_response %><br>
+    <%= f.text_area :response, class: "form-control" %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>

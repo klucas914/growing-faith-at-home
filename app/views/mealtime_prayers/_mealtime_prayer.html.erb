@@ -1,0 +1,6 @@
+<div class="container">
+  <p><%= mealtime_prayer.mealtime_prayer %>
+  <%= link_to 'Delete Prayer', [mealtime_prayer.week, mealtime_prayer],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></p>
+</div>

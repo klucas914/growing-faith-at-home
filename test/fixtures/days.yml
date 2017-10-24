@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-08-23 16:35:17
+  day_of_week: MyString
+  verse: MyString
+  title: MyString
+
+two:
+  date: 2017-08-23 16:35:17
+  day_of_week: MyString
+  verse: MyString
+  title: MyString

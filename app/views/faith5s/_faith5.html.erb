@@ -1,0 +1,18 @@
+<div class="container">
+<% @week.faith5s.each do |faith5| %>
+    <p>Share: <%= faith5.share %></p>
+  </div>
+  <div class="container">
+    <p>Read: <%= faith5.read %></p>
+  </div>
+  <div class="container">
+    <p>Talk: <%= faith5.talk %></p>
+  </div>
+  <div class="container">
+    <p>Pray: <%= faith5.pray %></p>
+  </div>
+  <div class="container">
+    <p>Bless: <%= faith5.bless %></p>
+  <%= link_to 'Delete Faith5', [faith5.week, faith5], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</div>

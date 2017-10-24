@@ -1,0 +1,8 @@
+<h1>Creative Responses</h1>
+
+<% @creative_responses.each do |creative_response| %>
+	<p>
+	<%= creative_response.week.name %><br>
+	<%= creative_response.response %><br>
+	</p>
+<% end %>

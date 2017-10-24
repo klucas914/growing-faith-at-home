@@ -1,0 +1,25 @@
+<%= form_for([@week, @week.faith5s.build]) do |f| %>
+  <div class="form-group">  
+    <%= f.label :share %>
+    <%= f.text_area :share, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :read %>
+    <%= f.text_area :read, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :talk %>
+    <%= f.text_area :talk, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pray %>
+    <%= f.text_area :pray, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bless %>
+    <%= f.text_area :bless, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  church_season: MyString
+  description: MyText
+  week: one
+
+two:
+  church_season: MyString
+  description: MyText
+  week: two

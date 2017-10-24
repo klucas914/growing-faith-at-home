@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <%= reading_list.day.strftime("%A, %e %B") %>
+  <%= link_to 'Delete Day', [reading_list.week, reading_list],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</div>

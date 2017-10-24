@@ -1,0 +1,2 @@
+module ServiceIdeasHelper
+end

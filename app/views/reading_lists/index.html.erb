@@ -1,0 +1,10 @@
+<h1>Reading Lists</h1>
+
+<% @reading_lists.each do |reading_list| %>
+	<p>
+	<%= reading_list.week.name %><br>
+	<%= reading_list.day %><br>
+	<%= reading_list.verse %>
+	<%= reading_list.title %>
+	</p>
+<% end %>

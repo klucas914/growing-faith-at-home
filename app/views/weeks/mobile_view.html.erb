@@ -1,0 +1,278 @@
+<nav class="navbar navbar-light navbar-inverse" id="MainNavBar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        Growing Faith at Home
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!--<div class="container-fluid" style="background-color:#EBEBEB;">
+  <div class="row">
+    <!--ROW FOR RESOURCES NAVBAR-->
+   <!-- <div class="col-xs-12 col-sm-3 ">-->
+
+<!--responsive sidebar-->
+<!--<div class="container-fluid" id="resource-nav">-->
+<nav class="navbar navbar-inverse sidebar" id="resource-nav" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand">Resources</a>
+    </div>
+    <div class="navbar" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <div class="btn-group">
+        <li class="active">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#readingList" aria-expanded="false" aria-controls="collapseExample">RL</button>
+            <div class="collapse" id="readingList">
+              <br>
+              <div class="card card-block">
+                <table class="table table-striped table-responsive">
+                  <tr>
+                    <th>Date</th>
+                    <th>Verse</th>
+                    <th>Title</th>
+                  </tr>
+                  <tr>
+                  <% @week.reading_lists.each do |reading_list| %>
+                    <td><%= reading_list.day.strftime("%A, %e %B") %></td>
+                    <td><%= reading_list.verse %></td>
+                    <td><%= reading_list.title %></td>  
+                  </tr>
+                 <% end %>
+                </table>
+              </div>
+            </div><br></li>
+        <li><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#creativeResponse" aria-expanded="false" aria-controls="collapseExample">CR</button>
+            <div class="collapse" id="creativeResponse"><br>
+              <div class="card card-block">
+                <% @week.creative_responses.each do |creative_response| %>
+                  <%= creative_response.response %>
+                <% end %>
+              </div>
+            </div><br></li>
+        <li ><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mealtimePrayer" aria-expanded="false" aria-controls="collapseExample">MP</button>
+            <div class="collapse" id="mealtimePrayer"><br>
+              <div class="card card-block">
+                <% @week.mealtime_prayers.each do |mealtime_prayer| %>
+                  <%= mealtime_prayer.mealtime_prayer %>
+                <% end %>
+              </div>
+            </div><br></li>
+        <li ><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#serviceIdea" aria-expanded="false" aria-controls="collapseExample">SI</button>
+            <div class="collapse" id="serviceIdea"><br>
+              <div class="card card-block">
+                <% @week.service_ideas.each do |service_idea| %>
+                  <%= service_idea.idea %>
+                <% end %>
+              </div>
+            </div><br>
+            </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--</div>-->
+<!--responsive sidebar end -->
+
+    <!--<div class="col-md-3" id="sidebar">
+    <div class="container">
+      <div class="resources">
+        <p>Weekly Resources</p>
+            <div class="btn-group-vertical">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#readingList" aria-expanded="false" aria-controls="collapseExample">Reading List</button>
+            <div class="collapse" id="readingList">
+              <br>
+              <div class="card card-block">
+                <table class="table table-striped table-responsive">
+                  <tr>
+                    <th>Date</th>
+                    <th>Verse</th>
+                    <th>Title</th>
+                  </tr>
+                  <tr>
+                  <% @week.reading_lists.each do |reading_list| %>
+                    <td><%= reading_list.day.strftime("%A, %e %B") %></td>
+                    <td><%= reading_list.verse %></td>
+                    <td><%= reading_list.title %></td>  
+                  </tr>
+                 <% end %>
+                </table>
+              </div>
+            </div><br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#creativeResponse" aria-expanded="false" aria-controls="collapseExample">Creative Response</button>
+            <div class="collapse" id="creativeResponse"><br>
+              <div class="card card-block">
+                <% @week.creative_responses.each do |creative_response| %>
+                  <%= creative_response.response %>
+                <% end %>
+              </div>
+            </div><br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mealtimePrayer" aria-expanded="false" aria-controls="collapseExample">Mealtime Prayer</button>
+            <div class="collapse" id="mealtimePrayer"><br>
+              <div class="card card-block">
+                <% @week.mealtime_prayers.each do |mealtime_prayer| %>
+                  <%= mealtime_prayer.mealtime_prayer %>
+                <% end %>
+              </div>
+            </div><br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#serviceIdea" aria-expanded="false" aria-controls="collapseExample">Service Idea</button>
+            <div class="collapse" id="serviceIdea"><br>
+              <div class="card card-block">
+                <% @week.service_ideas.each do |service_idea| %>
+                  <%= service_idea.idea %>
+                <% end %>
+              </div>
+            </div><br>
+            </div>
+            <div class="container" style="font-size: 75%;">
+              <p><%= link_to 'Search Archived Resources' %></p>
+              <p><%= link_to 'How to Use Growing Faith at Home' %></p>
+              <p><%= link_to 'About Grow Ministries' %></p>
+          </div>
+          <br>
+      </div>
+    </div>
+  </div>
+  </div>-->
+  <div class="row">
+  <div class="col-xs-12 col-sm-9" id="main">
+    <div class="container-fluid"><br>
+      <div align="center">
+        <div class="mv_box">
+          <div class="card-block">
+            <%= react_component('Memory_Verses', memory_verses: @week.memory_verses) %>
+            <!--</div>-->
+          </div>
+        </div><br>
+        <div class="welcome_text">   
+           <p><%=@week.name %></p>
+           <!--<h6>We are in the season of <%=@week.season %> </h6>-->
+        </div>       
+        <div align="center">
+        <!--<nav id="faith5buttons">-->
+          <div class="container-fluid" id="faith5buttons">
+            <!--<div class="row">
+              <div class="container-fluid">-->
+                <ul class="nav nav-pills nav-justified" role="pilllist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#share" role="tab" id="share-pill">S</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#read" role="tab" id="read-pill">R</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#talk" role="tab" id="talk-pill">T</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#pray" role="tab" id="pray-pill">P</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#bless" role="tab" id="bless-pill">B</a>
+                  </li>
+                </ul>
+              <!--</div>
+            </div>-->
+          </div>
+        <!--</nav>-->
+        </div>
+        
+        <div class="faith5_content">
+          <div class="tab-content">
+            <div class="tab-pane active" id="share" role="tabpanel">
+              <div class="container">
+                <% @week.shares.each do |share| %>
+                  <p><%= share.questions %></p><br><br>
+                <% end %>
+              </div>
+            </div>
+            <div class="tab-pane" id="read" role="tabpanel">
+              <div class="container">
+                <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[0].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[0].title %></h4>
+                        <p><%= @week.reading_lists[0].verse %></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[1].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[1].title %></h4>
+                        <p><%= @week.reading_lists[1].verse %></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[2].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[2].title %></h4>
+                        <p><%= @week.reading_lists[2].verse %></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[3].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[3].title %></h4>
+                        <p><%= @week.reading_lists[3].verse %></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[4].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[4].title %></h4>
+                        <p><%= @week.reading_lists[4].verse %></p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container">
+                        <h3>Reading for <%= @week.reading_lists[5].day.strftime("%A, %e %B") %></h3>
+                        <h4><%= @week.reading_lists[5].title %></h4>
+                        <p><%= @week.reading_lists[5].verse %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>-->
+              </div>
+            </div>
+            <div class="tab-pane" id="talk" role="tabpanel">
+              <div class="container">
+                <% @week.talks.each do |talk| %>
+                  <p><%= talk.question %></p><br><br>
+                <% end %>
+              </div>
+            </div>
+            <div class="tab-pane" id="pray" role="tabpanel">
+              <div class="container">
+                <% @week.prays.each do |pray| %>
+                  <%= pray.prayer %>
+                <% end %>
+              </div>
+            </div>
+            <div class="tab-pane" id="bless" role="tabpanel">
+              <div class="container">
+                <% @week.blesses.each do |bless| %>
+                  <%= bless.blessing %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>  
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  share: MyText
+  talk: MyText
+  pray: MyText
+  bless: MyText
+  read: MyText
+  week: one
+
+two:
+  share: MyText
+  talk: MyText
+  pray: MyText
+  bless: MyText
+  read: MyText
+  week: two

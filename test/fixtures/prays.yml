@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prayer: MyText
+  week: one
+
+two:
+  prayer: MyText
+  week: two

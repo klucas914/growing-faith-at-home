@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <h1>Weeks</h1>
+  </div>
+
+  <div class="container-fluid">
+    <%= link_to 'Create a New Week', new_week_path %>
+  </div>
+
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <tr>
+        <th>Week Name</th>
+        <th>Season</th>
+        <th>Date Published</th>
+        <th>Date Archived</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @weeks.each do |week| %>
+      <tr>
+	      <td><%= week.name %></td>
+        <td><%= week.season %></td>
+	      <td><%= week.published_on %></td>
+	      <td><%= week.archived_on %></td>
+	      <td><%= link_to 'Manage Week', week_path(week) %></td>
+        <td><%= link_to 'Large Screen View', user_view_week_path(week) %>
+        <td><%= link_to 'Mobile View', mobile_view_week_path(week) %>
+	      <td><%= link_to 'Edit', edit_week_path(week) %></td>
+	      <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

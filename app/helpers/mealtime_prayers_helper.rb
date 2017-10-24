@@ -1,0 +1,2 @@
+module MealtimePrayersHelper
+end
