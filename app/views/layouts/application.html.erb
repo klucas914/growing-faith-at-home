@@ -8,9 +8,54 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
+  <!--<nav class="navbar navbar-light bg-faded" id="AdminNav">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/GFAH.png" width="30" height="30" class="d-inline-block align-top" alt="">Growing Faith at Home
+  </a>
+</nav>
+
+<!--sidebar-->
+<!--<div class="container-fluid">
+    <div class="row d-flex d-md-block flex-nowrap wrapper">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+                <div class="list-group border-0 card text-center text-md-left">
+                <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">Current Week</span> </a>
+                <div class="collapse" id="menu1">
+                    <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">View</a>
+                    <div class="collapse" id="menu1sub1">
+                        <a href="weeks/1/user_view" class="list-group-item" data-parent="#menu1sub1">Largescreen</a>
+                        <a href="" class="list-group-item" data-parent="#menu1sub1">Mobile</a>
+                    </div>
+                    <a href="#" class="list-group-item" data-parent="#menu1">Manage</a>
+                </div>
+                <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="d-none d-md-inline">New Week</span></a>
+                <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="d-none d-md-inline">Queued Weeks</span></a>
+                <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="d-none d-md-inline">Archived Weeks</span></a>
+                <div class="list-group border-0 card text-center text-md-left">
+                <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="d-none d-md-inline">Manage Pages</span> </a>
+                <div class="collapse" id="menu2">
+                    <a href="#" class="list-group-item" data-parent="#menu1">About Grow Ministries</a>
+                    <a href="#" class="list-group-item" data-parent="#menu1">How to Use GF@H</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+            <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+            <div class="page-header">
+                <h2>Admin Dashboard</h2>
+            </div>
+            <!--<p class="lead">Select from the options to customise Growing Faith at Home.</p>-->
+            <!--<hr>
+            
+
+            </div>
+        </main>
+    </div>-->
     <%= yield %>
   </body>
 </html>
