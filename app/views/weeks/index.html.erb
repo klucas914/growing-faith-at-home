@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
   <div class="container-fluid">
-    <h1>Weeks</h1>
+    <h1>All Weeks</h1>
   </div>
 
   <div class="container-fluid">
@@ -19,15 +19,13 @@
         <th></th>
         <th></th>
         <th></th>
-        <th></th>
       </tr>
 
       <% @weeks.each do |week| %>
       <tr>
 	      <td><%= week.name %></td>
 	      <td><%= link_to 'Manage Week', week_path(week) %></td>
-        <td><%= link_to 'Large Screen View', user_view_week_path(week) %></td>
-        <td><%= link_to 'Mobile View', mobile_view_week_path(week) %></td>
+        <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
 	      <td><%= link_to 'Edit', edit_week_path(week) %></td>
 	      <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
