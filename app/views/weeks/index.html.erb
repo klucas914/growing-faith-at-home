@@ -1,17 +1,20 @@
-
-
-
-
-<div class="container-fluid">
-  <div class="container-fluid">
-    <h1>All Weeks</h1>
+<nav class="navbar navbar-toggleable-sm navbar-dark" id="MainNavBar">
+  <a class="navbar-brand">
+    Growing Faith at Home
+  </a>
+</nav>
+<br>
+<div class="row">
+  <div class="col-md-3">
+    <div clas="container-fluid">
+      <div><%= link_to 'Current Week' %></div>
+      <div><%= link_to 'New Weeks', new_week_path %></div>
+      <div><%= link_to 'Queued Weeks', queue_weeks_path %></div>
+      <div><%= link_to 'Archives' %></div>
+      <div><%= link_to 'Manage Pages' %></div>
+    </div>
   </div>
-
-  <div class="container-fluid">
-    <%= link_to 'Create a New Week', new_week_path %>
-  </div>
-  <br>
-  <div class="container-fluid" >
+  <div class="col-md-9" >
     <table class="table table-striped table-responsive" style="background-color: white;">
       <tr>
         <th>Week Name</th>
@@ -21,7 +24,6 @@
         <th></th>
         <th></th>
       </tr>
-
       <% @weeks.each do |week| %>
       <tr>
 	      <td><%= week.name %></td>
@@ -35,4 +37,4 @@
     </table>
   </div>
 </div>
-</div>
+

@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     member do
       get :mobile_view
     end
+    collection do 
+      get :current_week
+    end
+    collection do
+      get :queue
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

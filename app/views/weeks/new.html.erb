@@ -1,9 +1,39 @@
-<div class="container">
-  <div class="container">
-    <h1>New Week</h1>
+<div class="new-weeks-container">
+<%= link_to 'Dashboard', weeks_path %>
+  <div class="d-flex justify-content-center">
+    <h1>New Weeks</h1>
   </div>
-  <div class="container">
-    <%= render 'form' %>
+  <br>
+  <hr>
+  <div class="d-flex justify-content-center">
+      <%= render 'form' %>
   </div>
-<%= link_to 'Back', weeks_path %>
+  <br>
+  <hr>
+  <div class="d-flex justify-content-center">
+    <div class="container" style="width: 50%; text-align: center;">
+    <p>These weeks have not been added to the queue. To move the new weeks into the queue, finish adding content by going to "Manage Week" and then press "Add to Queue".</p>
+    </div>
+  </div>
+  <div class="container-fluid" style="width: 75%;" >
+    <table class="table table-striped table-responsive" style="background-color: white;">
+      <tr>
+        <th>Week Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @weeks.each do |week| %>
+      <tr>
+	    <td><%= week.name %></td>
+	    <td><%= link_to 'Manage Week', week_path(week) %></td>
+        <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
+	    <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Add to Queue' %></td>
+      </tr>
+      <% end %>
+    </table>
+    <br>
+  </div>
 </div>

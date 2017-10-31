@@ -10,6 +10,7 @@ class WeeksController < ApplicationController
 
   def new
   	@week = Week.new
+    @weeks = Week.all
   end
 
   def edit
@@ -48,6 +49,14 @@ class WeeksController < ApplicationController
 
   def mobile_view
     @week = Week.find(params[:id])
+  end
+
+  def current_view
+    @weeks = Week.all
+  end
+
+  def queue
+    @weeks = Week.all
   end
 
   private

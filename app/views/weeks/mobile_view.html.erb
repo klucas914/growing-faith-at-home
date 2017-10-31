@@ -156,13 +156,15 @@
           <div class="tab-content">
             <div class="tab-pane active" id="share" role="tabpanel">
               <div class="container">
+                <h3>Share</h3><br>
                 <% @week.shares.each do |share| %>
-                  <p><%= share.questions %></p><br><br>
+                  <p><%= share.questions %></p><br>
                 <% end %>
               </div>
             </div>
             <div class="tab-pane" id="read" role="tabpanel">
               <div class="container">
+                <h3>Read</h3><br>
                 <!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
                   <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
@@ -221,13 +223,15 @@
             </div>
             <div class="tab-pane" id="talk" role="tabpanel">
               <div class="container">
+                <h3>Talk</h3><br>
                 <% @week.talks.each do |talk| %>
-                  <p><%= talk.question %></p><br><br>
+                  <p><%= talk.question %></p><br>
                 <% end %>
               </div>
             </div>
             <div class="tab-pane" id="pray" role="tabpanel">
               <div class="container">
+                <h3>Pray</h3><br>
                 <% @week.prays.each do |pray| %>
                   <%= pray.prayer %>
                 <% end %>
@@ -235,6 +239,7 @@
             </div>
             <div class="tab-pane" id="bless" role="tabpanel">
               <div class="container">
+                <h3>Bless</h3><br>
                 <% @week.blesses.each do |bless| %>
                   <%= bless.blessing %>
                 <% end %>
