@@ -1,6 +1,5 @@
 <%= form_for([@week, @week.shares.build]) do |f| %>
   <div class="form-group">
-    <%= f.label :sharing_question %><br>
     <%= f.text_area :questions, class: "form-control" %>
   </div>
   <div class="action">

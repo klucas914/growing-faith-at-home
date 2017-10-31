@@ -1,23 +1,23 @@
 <div class="container-fluid">
   <div class="container-fluid">
-    <h1><%= @week.name %></h1>
+    <h2><%= @week.name %></h2>
     <%= link_to 'Back to Dashboard', weeks_path %>  |  <%= link_to "Go to User View", mobile_view_week_path(@week) %>
   </div>
   <br>
   <div class="container-fluid">
-    <div class="row">
+    <!--<div class="row">
       <div class="container">
       <p>Church Season: </p>
       <p>Date published: <%= @week.published_on %></p>
       <p>Date archived: <%= @week.archived_on %></p>
       </div>
     </div>
-    <br>
+    <br>-->
       <div class="card">
         <div class="card-block">
           <div class="card-header">
-            <h4 class="card-title">  
-              Reading List for <%= @week.name %></h4>
+            <div class="card-title">  
+              Reading List for <%= @week.name %></div>
           </div>
           <br>
           <div class="row">
@@ -28,12 +28,14 @@
                 <th>Date</th>
                 <th>Verse</th>
                 <th>Title</th>
+                <th></th>
               </tr>
               <tr>
               <% @week.reading_lists.each do |reading_list| %>
                 <td><%= reading_list.day.strftime("%A, %e %B") %></td>
                 <td><%= reading_list.verse %></td>
                 <td><%= reading_list.title %></td>  
+                <td><%= link_to 'Edit' %> <%= link_to 'Delete' %></td>
               </tr>
               <% end %>
             </table>
@@ -48,48 +50,23 @@
       </div>
     </div>
     <br>
-    <!--<div class="card">
-      <div class="card-block">
-        <div class="card-header">
-          <h4 class="card-title">  
-            Faith5 for <%= @week.name %></h4>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="container">
-              <h3>Faith 5</h3>
-              <%#= render @week.faith5s %> 
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="container">
-              <h3>Add a Faith5</h3>
-              <%#= render 'faith5s/form' %>
-            </div>
-          </div>
-        </div>
-        <br>
-      </div>
-    </div>  
-    <br>-->
     <div class="card">
       <div class="card-block">
         <div class="card-header">
-          <h4 class="card-title">  
-            Share Questions for <%= @week.name %></h4>
+          <div class="card-title">  
+            Share Questions for <%= @week.name %></div>
         </div>
         <br>
         <div class="row">
           <div class="col-sm-6">
             <div class="container">
-              <h3>Share</h3>
+              <h6>Share</h6>
               <%= render @week.shares %>
             </div>
           </div>
         <div class="col-sm-6">
            <div class="container">
-             <h3>Add a Share Question</h3>
+             <h6>Add a Question to Share</h6>
              <%= render 'shares/form' %> 
            </div>
          </div>
@@ -101,20 +78,20 @@
   <div class="card">
       <div class="card-block">
         <div class="card-header">
-          <h4 class="card-title">  
-            Talk Questions for <%= @week.name %></h4>
+          <div class="card-title">  
+            Talk Questions for <%= @week.name %></div>
         </div>
         <br>
         <div class="row">
           <div class="col-sm-6">
             <div class="container">
-              <h3>Talk</h3>
+              <h6>Talk</h6>
               <%= render @week.talks %>
             </div>
           </div>
         <div class="col-sm-6">
            <div class="container">
-             <h3>Add a Talk Question</h3>
+             <h6>Add a Question to Talk</h6>
              <%= render 'talks/form' %> 
            </div>
          </div>
@@ -126,20 +103,20 @@
   <div class="card">
       <div class="card-block">
         <div class="card-header">
-          <h4 class="card-title">  
-            Prayer for <%= @week.name %></h4>
+          <div class="card-title">  
+            Prayer for <%= @week.name %></div>
         </div>
         <br>
         <div class="row">
           <div class="col-sm-6">
             <div class="container">
-              <h3>Prayer</h3>
+              <h6>Prayer</h6>
               <%= render @week.prays %>
             </div>
           </div>
         <div class="col-sm-6">
            <div class="container">
-             <h3>Add a Prayer</h3>
+             <h6>Add a Prayer</h6>
              <%= render 'prays/form' %> 
            </div>
          </div>
@@ -149,22 +126,22 @@
    </div>
   <br>
   <div class="card">
-      <div class="card-block">
-        <div class="card-header">
-          <h4 class="card-title">  
-            Blessing for <%= @week.name %></h4>
+      <div class="card-header">
+          <div class="card-title">  
+            Blessing for <%= @week.name %></div>
         </div>
+        <div class="card-block">
         <br>
         <div class="row">
           <div class="col-sm-6">
             <div class="container">
-              <h3>Blessing</h3>
+              <h6>Blessing</h6>
               <%= render @week.blesses %>
             </div>
           </div>
         <div class="col-sm-6">
            <div class="container">
-             <h3>Add a Blessing</h3>
+             <h6>Add a Blessing</h6>
              <%= render 'blesses/form' %> 
            </div>
          </div>
@@ -179,20 +156,20 @@
     <div class="card">
       <div class="card-block">
         <div class="card-header">
-          <h4 class="card-title">  
-            Memory Verse for <%= @week.name %></h4>
+          <div class="card-title">  
+            Memory Verse for <%= @week.name %></div>
         </div>
         <br>
         <div class="row">
           <div class="col-sm-6">
             <div class="container">
-              <h3>Memory Verse</h3>
+              <h6>Memory Verse</h6>
               <%= render @week.memory_verses %>
             </div>
           </div>
         <div class="col-sm-6">
            <div class="container">
-             <h3>Add a Memory Verse</h3>
+             <h6>Add a Memory Verse</h6>
              <%= render 'memory_verses/form' %> 
            </div>
          </div>
@@ -204,20 +181,20 @@
   <div class="card">
     <div class="card-block">
       <div class="card-header">
-        <h4 class="card-title">  
-          Creative Response for <%= @week.name %></h4>
+        <div class="card-title">  
+          Creative Response for <%= @week.name %></div>
       </div>
       <br> 
       <div class="row">
         <div class="col-sm-6"> 
           <div class="container">
-            <h3>Creative Response</h3>
+            <h6>Creative Response</h6>
             <%= render @week.creative_responses %>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="container">
-            <h3>Add a Creative Response</h3>
+            <h6>Add a Creative Response</h6>
             <%= render 'creative_responses/form' %>
           </div>
         </div>
@@ -229,20 +206,20 @@
   <div class="card">
     <div class="card-block">
       <div class="card-header">
-        <h4 class="card-title">  
-          Mealtime Prayer for <%= @week.name %></h4>
+        <div class="card-title">  
+          Mealtime Prayer for <%= @week.name %></div>
       </div>
       <br> 
       <div class="row">
         <div class="col-sm-6">
           <div class="container">
-            <h3>Mealtime Prayer</h3>
+            <h6>Mealtime Prayer</h6>
             <%= render @week.mealtime_prayers %>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="container">
-            <h3>Add a Mealtime Prayer</h3>
+            <h6>Add a Mealtime Prayer</h6>
             <%= render 'mealtime_prayers/form' %>
           </div>
         </div>
@@ -254,20 +231,20 @@
   <div class="card">
     <div class="card-block">
       <div class="card-header">
-        <h4 class="card-title">  
-          Service Idea for <%= @week.name %></h4>
+        <div class="card-title">  
+          Service Idea for <%= @week.name %></div>
       </div>
       <br>
       <div class="row">
         <div class="col-sm-6">
           <div class="container">
-            <h3>Service Idea</h3>
+            <h6>Service Idea</h6>
             <%= render @week.service_ideas %>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="container">
-            <h3>Add a Service Idea</h3>
+            <h6>Add a Service Idea</h6>
             <%= render 'service_ideas/form' %>
           </div>
         </div>

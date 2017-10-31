@@ -1,6 +1,5 @@
 <%= form_for([@week, @week.service_ideas.build]) do |f| %>
   <div class="form-group">
-    <%= f.label :service_idea %><br>
     <%= f.text_area :idea, class: "form-control" %>
   </div>
   <div class="action">

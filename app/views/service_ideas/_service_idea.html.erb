@@ -1,5 +1,5 @@
 <div class="container">
-  <%= service_idea.idea %> <%= link_to 'Delete Idea', [service_idea.week, service_idea],
+  <%= service_idea.idea %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [service_idea.week, service_idea],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </div>

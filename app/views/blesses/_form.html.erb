@@ -1,6 +1,5 @@
 <%= form_for([@week, @week.blesses.build]) do |f| %>
   <div class="form-group">
-    <%= f.label :blessing %><br>
     <%= f.text_area :blessing, class: "form-control" %>
   </div>
   <div class="action">
