@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     member do
       post :add_to_queue
     end
+    member do
+      post :publish
+    end
     collection do
       get :queue
     end

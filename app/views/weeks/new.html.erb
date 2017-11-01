@@ -18,17 +18,19 @@
     <table class="table table-striped table-responsive" style="background-color: white;">
       <tr>
         <th>Week Name</th>
+        <th>Publishing Dates</th>
         <th></th>
         <th></th>
-        <th></th>
+        <!--<th></th>-->
         <th></th>
       </tr>
       <% @weeks.each do |week| %>
       <tr>
 	      <td><%= week.name %></td>
+        <td><%= week.published_on.strftime("%A, %e %B, %Y") %> - <%= week.archived_on.strftime("%A, %e %B, %Y") %></td>
 	      <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
-	      <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      <!--<td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
         <td><%= button_to 'Add to Queue', add_to_queue_week_path(week) %></td>
       </tr>
       <% end %>

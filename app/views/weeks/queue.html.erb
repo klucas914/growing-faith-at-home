@@ -14,15 +14,19 @@
       <tr>
         <th>Week Name</th>
         <th>Publishing Dates</th>
+        <th>Published?</th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
       <% @weeks.each do |week| %>
       <tr>
 	    <td><%= week.name %></td>
-	    <td><%= week.published_on %> - <%= week.archived_on %></td>
-	    <td><%= link_to 'Manage Week', week_path(week) %></td>
+	    <td><%= week.published_on.strftime("%A, %e %B, %Y") %> - <%= week.archived_on.strftime("%A, %e %B, %Y") %></td>
+	    <td><%= week.published? %></td>
+      <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
+        <td><%= button_to 'Make Current Week', publish_week_path(week) %></td>
       </tr>
       <% end %>
     </table>

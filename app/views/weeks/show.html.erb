@@ -1,18 +1,25 @@
 <div class="container-fluid">
+  <!--<div class="container">
+    <%= link_to "Back", new_week_path %>
+  </div><br>-->
   <div class="container-fluid">
     <h2><%= @week.name %></h2>
-    <%= link_to 'Back to Dashboard', weeks_path %>  |  <%= link_to "Go to User View", mobile_view_week_path(@week) %>
   </div>
   <br>
   <div class="container-fluid">
-    <!--<div class="row">
-      <div class="container">
-      <p>Church Season: </p>
-      <p>Date published: <%= @week.published_on %></p>
-      <p>Date archived: <%= @week.archived_on %></p>
+    <div class="card">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="container">Church Season:</div>
+            <div class="container">Publish Date: <%= @week.published_on.strftime("%A, %e %B, %Y")  %></div>
+            <div class="container">Archive Date: <%= @week.archived_on.strftime("%A, %e %B, %Y")  %></div>
+            <div class="container"><%= link_to 'Edit', edit_week_path(@week) %></div>
+          </div>
+        </div>
       </div>
     </div>
-    <br>-->
+    <br>
       <div class="card">
         <div class="card-block">
           <br>
