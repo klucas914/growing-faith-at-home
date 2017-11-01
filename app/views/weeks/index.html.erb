@@ -1,21 +1,24 @@
+
 <nav class="navbar navbar-toggleable-sm navbar-dark" id="MainNavBar">
   <a class="navbar-brand">
     Growing Faith at Home
   </a>
 </nav>
 <br>
+
 <div class="row">
   <div class="col-md-3">
     <div clas="container-fluid">
       <div><%= link_to 'Current Week' %></div>
       <div><%= link_to 'New Weeks', new_week_path %></div>
       <div><%= link_to 'Queued Weeks', queue_weeks_path %></div>
-      <div><%= link_to 'Archives' %></div>
+      <div><%= link_to 'Archives', archives_weeks_path %></div>
       <div><%= link_to 'Manage Pages' %></div>
     </div>
   </div>
   <div class="col-md-9" >
-    <table class="table table-striped table-responsive" style="background-color: white;">
+    <%= render 'archives' %>
+    <!--<table class="table table-striped table-responsive" style="background-color: white;">
       <tr>
         <th>Week Name</th>
         <th></th>
@@ -34,7 +37,7 @@
         <td><%= button_to 'Add to Queue' %></td>
       </tr>
       <% end %>
-    </table>
+    </table>-->
   </div>
 </div>
 

@@ -51,12 +51,30 @@ class WeeksController < ApplicationController
     @week = Week.find(params[:id])
   end
 
-  def current_view
-    @weeks = Week.all
+  def current_week
+    @week = Week.find(params[:id])
+    @reading_lists = @week.reading_lists
   end
 
   def queue
+    @weeks = Week.where("queued IS TRUE")
+ 
+  end
+
+  def archives
     @weeks = Week.all
+  end
+
+  def add_to_queue
+    @week = Week.find(params[:id])
+
+    if @week.update(queued: true)
+      flash[:notice] = "#{@week.name} was successfully added to the queue! Manage and view the week through the 'Queued Weeks' tab."
+      redirect_to new_weeks_path
+    else
+      flash[:alert] = "There was an error adding this week to the queue. Please try again." 
+    end
+
   end
 
   private
