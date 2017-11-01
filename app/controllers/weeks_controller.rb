@@ -53,11 +53,10 @@ class WeeksController < ApplicationController
 
   def current_week
     @weeks = Week.current.where("queued IS TRUE")
-    #@weeks = Week.where("queued IS TRUE AND published IS TRUE")
   end
 
   def queue
-    @weeks = Week.where("queued IS TRUE AND published IS FALSE").order('published_on ASC')
+    @weeks = Week.queue.where("queued IS TRUE").order('published_on ASC')
  
   end
 
@@ -77,22 +76,16 @@ class WeeksController < ApplicationController
 
   end
 
-  def publish
-    @week = Week.find(params[:id])
+  #def publish
+   # @week = Week.find(params[:id])
     
-    if @week.update(published: true)
-      flash[:notice] = "#{@week.name} was successfully added to current week!"
-      redirect_to current_week_weeks_path
-    else
-      flash[:alert] = "There was an error adding this week to current week. Please try again."
-    end 
-    #if @week.published_on.to_date.past? or @week.published_on.to_date.today?
-     #   @week.update(published: true)
-      #  flash[:notice] = "#{@week.name} was successfully added to the current week!"
-     #else
-      # flash[:alert] = "There was an error adding this week to current week. Please try again."
-     #end
-  end
+    #if @week.update(published: true)
+     # flash[:notice] = "#{@week.name} was successfully added to current week!"
+      #redirect_to current_week_weeks_path
+    #else
+     # flash[:alert] = "There was an error adding this week to current week. Please try again."
+    #end 
+  #end
 
   private
     def week_params

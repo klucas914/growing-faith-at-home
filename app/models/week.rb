@@ -16,5 +16,6 @@ class Week < ApplicationRecord
             Time.now, Time.now)
   }
   scope :archived, -> { where("archived_on <?", Time.now)}
+  scope :queue, -> { where("published_on >?", Time.now)}
 
 end
