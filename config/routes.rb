@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     member do 
       get :current_week
     end
+    member do
+      post :add_to_queue
+    end
     collection do
       get :queue
     end

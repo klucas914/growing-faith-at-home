@@ -10,7 +10,7 @@ class WeeksController < ApplicationController
 
   def new
   	@week = Week.new
-    @weeks = Week.all
+    @weeks = Week.where("queued IS FALSE")
   end
 
   def edit
@@ -70,7 +70,7 @@ class WeeksController < ApplicationController
 
     if @week.update(queued: true)
       flash[:notice] = "#{@week.name} was successfully added to the queue! Manage and view the week through the 'Queued Weeks' tab."
-      redirect_to new_weeks_path
+      redirect_to new_week_path
     else
       flash[:alert] = "There was an error adding this week to the queue. Please try again." 
     end

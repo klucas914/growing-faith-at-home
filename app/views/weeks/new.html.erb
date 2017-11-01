@@ -30,7 +30,7 @@
 	    <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
 	    <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Add to Queue' %></td>
+        <td><%= button_to 'Add to Queue', add_to_queue_week_path(week) %></td><td></td>
       </tr>
       <% end %>
     </table>
