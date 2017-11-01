@@ -1,5 +1,4 @@
 <div class="new-weeks-container">
-<%= link_to 'Dashboard', weeks_path %>
   <div class="d-flex justify-content-center">
     <h1>New Weeks</h1>
   </div>
@@ -26,11 +25,11 @@
       </tr>
       <% @weeks.each do |week| %>
       <tr>
-	    <td><%= week.name %></td>
-	    <td><%= link_to 'Manage Week', week_path(week) %></td>
+	      <td><%= week.name %></td>
+	      <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
-	    <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Add to Queue', add_to_queue_week_path(week) %></td><td></td>
+	      <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Add to Queue', add_to_queue_week_path(week) %></td>
       </tr>
       <% end %>
     </table>

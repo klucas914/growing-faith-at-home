@@ -1,5 +1,5 @@
 class WeeksController < ApplicationController
-
+  layout "admin", except: [:mobile_view]
   def index
   	@weeks = Week.all
   end
@@ -52,8 +52,7 @@ class WeeksController < ApplicationController
   end
 
   def current_week
-    @week = Week.find(params[:id])
-    @reading_lists = @week.reading_lists
+    @weeks = Week.where("queued IS TRUE")
   end
 
   def queue

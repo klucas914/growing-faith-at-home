@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     member do
       get :mobile_view
     end
-    member do 
+    collection do 
       get :current_week
     end
     member do

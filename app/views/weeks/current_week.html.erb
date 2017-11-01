@@ -1,12 +1,12 @@
 <div class="new-weeks-container">
   <div class="d-flex justify-content-center">
-    <h1>Queued Weeks</h1>
+    <h1>Current Week</h1>
   </div>
   <br>
   
   <div class="d-flex justify-content-center">
     <div class="container" style="width: 50%; text-align: center;">
-    <p>These weeks are in the queue. They will be published on the scheduled date. To edit the week or change the publishing date, go to "Manage Week". After the week is published it will be moved to the archives.</p>
+    <p>This is the week that is currently published for users to view.</p>
     </div>
   </div>
   <div class="container-fluid" style="width: 75%;" >
@@ -19,9 +19,9 @@
       </tr>
       <% @weeks.each do |week| %>
       <tr>
-	    <td><%= week.name %></td>
-	    <td><%= week.published_on %> - <%= week.archived_on %></td>
-	    <td><%= link_to 'Manage Week', week_path(week) %></td>
+      <td><%= week.name %></td>
+      <td><%= week.published_on %> - <%= week.archived_on %></td>
+      <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
       </tr>
       <% end %>
