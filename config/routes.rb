@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
   root 'weeks#index'
   namespace :api do
     namespace :vi do
@@ -57,6 +58,9 @@ Rails.application.routes.draw do
     end
     member do
       get :manage_weeks_archived
+    end
+    member do
+      get :user_view_archived
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

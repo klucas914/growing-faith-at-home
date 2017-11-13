@@ -1,20 +1,12 @@
 <div class="container-fluid">
-  <!--<div class="container">
-    <%= link_to "Back", new_week_path %>
-  </div><br>-->
-  <div class="container-fluid">
-    <h2><%= @week.name %></h2>
-  </div>
-  <br>
-  <p>This week is in Current Weeks.</p>
   <%= link_to 'Back to Current Weeks', current_week_weeks_path %>
   <br>
+  <br>
   <div class="container-fluid">
-    <!--<div class="container">
-      <%#= button_to 'Add to Queue', add_to_queue_week_path(@week), class: "btn btn-success" %>
-    </div>-->
-    
-    <br>
+    <h2><%= @week.name %></h2>
+    <p>This week is currently stored in Current Weeks.</p>
+  </div>
+  <div class="container-fluid">
     <div class="card">
       <div class="card-block">
         <div class="row">

@@ -45,7 +45,7 @@ class WeeksController < ApplicationController
   	@week = Week.find(params[:id])
   	@week.destroy
 
-  	redirect_to weeks_path
+  	redirect_to new_week_path
   end
 
   def user_view
@@ -83,6 +83,11 @@ class WeeksController < ApplicationController
   end
 
   def manage_weeks_archived
+    @week = Week.find(params[:id])
+    @seasons = Season.all
+  end
+
+  def user_view_archived
     @week = Week.find(params[:id])
     @seasons = Season.all
   end

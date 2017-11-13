@@ -1,29 +1,20 @@
 <div class="container-fluid">
-  <!--<div class="container">
-    <%= link_to "Back", new_week_path %>
-  </div><br>-->
+  <%= link_to "Back to New Weeks", new_week_path %>
+  <br>
+  <br>
   <div class="container-fluid">
     <h2><%= @week.name %></h2>
-  </div>
-  <br>
-  <div class="container">
-  <% if @week.queued == false %>
-    <%= link_to "Back to New Weeks", new_week_path %>
-  <% end %>
-  </div>
-  <br>
-  <div class="container-fluid">
-    <!--<div class="container">
-      <%#= button_to 'Add to Queue', add_to_queue_week_path(@week), class: "btn btn-success" %>
-    </div>-->
-    <% if @week.completed == false %>
+    <p>
+      <% if @week.completed == false %>
     <div class="button">
     <%= button_to 'Mark Complete', mark_complete_week_path(@week), class: "btn btn-success" %>
     </div>
     <% else %>
-    <p>This week has been marked completed</p>
+    <p>This week has been marked complete but is not yet in the queue. To add it to the queue, go back to New Weeks and press the Add to Queue button.</p>
     <% end %>
-    <br>
+    </p>
+  </div>
+  <div class="container-fluid">
     <div class="card">
       <div class="card-block">
         <div class="row">
@@ -31,7 +22,7 @@
             <div class="container">Church Season: <%= @week.season.church_season %></div>
             <div class="container">Publish Date: <%= @week.published_on.strftime("%A, %e %B, %Y")  %></div>
             <div class="container">Archive Date: <%= @week.archived_on.strftime("%A, %e %B, %Y")  %></div>
-            <div class="container"><%= link_to 'Edit', edit_week_path(@week) %></div>
+            <div class="container"><%= link_to 'Edit', edit_week_path(@week) %>  |  <%= link_to 'Delete Week', week_path(@week), method: :delete, data: { confirm: 'Are you sure?' } %></div>
           </div>
         </div>
       </div>
