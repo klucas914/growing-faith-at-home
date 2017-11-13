@@ -16,7 +16,7 @@ class SharesController < ApplicationController
     @share = @week.shares.find(params[:id])
  
     if @share.update(share_params)
-      redirect_to week_path(week)
+      redirect_to week_path(@week)
     else
       render 'edit'
   end

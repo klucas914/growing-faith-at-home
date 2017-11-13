@@ -54,23 +54,40 @@ class WeeksController < ApplicationController
 
   def mobile_view
     @week = Week.find(params[:id])
+    @seasons = Season.all
   end
 
   def current_week
     @weeks = Week.current.where("queued IS TRUE")
+    @seasons = Season.all
   end
 
   def queue
     @weeks = Week.queue.where("queued IS TRUE").order('published_on ASC')
+    @seasons = Season.all
  
   end
 
   def archives
     @weeks = Week.archived.where("queued IS TRUE").order('published_on DESC')
+    @seasons = Season.all
   end
 
+  def mark_complete
+    @week = Week.find(params[:id])
+    @seasons = Season.all
+
+    if @week.update(completed: true)
+      flash[:notice] = "#{@week.name} has been marked complete. You can now add the week to the queue. You can still edit the week via Manage Weeks."
+      redirect_to new_week_path
+    else
+      flash[:alert] = "There was an error marking this week complete. Please try again."
+    end
+  end
+  
   def add_to_queue
     @week = Week.find(params[:id])
+    @seasons = Season.all
 
     if @week.update(queued: true)
       flash[:notice] = "#{@week.name} was successfully added to the queue! Manage and view the week through the 'Queued Weeks' tab."
