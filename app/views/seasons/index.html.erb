@@ -1,1 +1,20 @@
 <h1>Seasons</h1>
+
+<%= link_to 'New Season', new_season_path %>
+<table class="table table-striped table-responsive">
+  <tr>
+    <th>Season</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+
+  </tr>
+  <% @seasons.each do |season| %>
+  <tr>
+    <td><%= season.church_season %></td>
+    <td><%= season.description %></td>
+    <td><%= link_to 'Edit', edit_season_path(season) %></td>
+	<td><%= link_to 'Delete', season_path(season), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+ </table>

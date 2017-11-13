@@ -16,16 +16,17 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 body {
 	height: 100%;
 	background: #EBEBEB;
 }
 
 #AdminNav {
-	background-color: #4958C8;
-	
+	background-color: #00516D;
 	.navbar-brand {
 	  color: white;
+
 	}
 
 	p {
@@ -34,7 +35,8 @@ body {
 	}
 }
 #MainNavBar {
-	background-color: #4958C8;
+	background-color: #00516D;
+  font-family: 'Shadows Into Light Two', cursive;
 	.navbar-brand {
 	  color: white;
 	}
@@ -61,7 +63,8 @@ body {
 .welcome_text {
 	color: black;
 	text-align: center;
-	font-size: 150%;
+	font-family: 'Shadows Into Light Two', cursive;
+  font-size: 150%;
 	padding: 1%;
 
 	h6 {
@@ -71,7 +74,7 @@ body {
 }
 
 .mv_box {
-	background-color: #67C867;
+	background-color: #9AC15E;
 	width: 90%; 
 	padding: 15px;
 	text-align: center;
@@ -80,7 +83,8 @@ body {
 }	
 
 .memory_verses {
-	color: white;
+	font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .btn-group {
@@ -90,11 +94,13 @@ body {
 	.btn {
 	  width: 70px;
 	  height: 70px;
-	  border-radius: 35px;
+    border: 0px;
+    border-radius: 35px;
 	  margin-bottom: 5px;
-	  background-color: #4A86E8;
+	  background-color: #009D75;
 	  padding: 20px;
 	  margin-left: 5px;
+    box-shadow: none;
 	}
 }
 
@@ -108,8 +114,12 @@ body {
 }
 
 #share {
+   font-family: 'Shadows Into Light Two', cursive;
     border: 10px solid #ddd;
     background-color: #FFFFFF; 
+    background-image: url("CC2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 	padding: 40px;
 	width: 100%;
 	height: 400px;
@@ -117,9 +127,12 @@ body {
 }
 
 #talk {
-    border: 10px solid #ddd;
-    background-color: #FFFFFF; 
-	padding: 40px;
+  border: 10px solid #ddd;
+  background-image: url("DK.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF; 
+  padding: 40px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
@@ -127,7 +140,10 @@ body {
 
 #pray {
     border: 10px solid #ddd;
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
+    background-image: url("RT.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
 	padding: 40px;
 	width: 100%;
 	height: 400px;
@@ -137,6 +153,9 @@ body {
 #bless {
     border: 10px solid #ddd;
     background-color: #FFFFFF; 
+    background-image: url("RT.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
 	padding: 40px;
 	width: 100%;
 	height: 400px;
@@ -146,44 +165,78 @@ body {
 #read {
     border: 10px solid #ddd;
     background-color: #FFFFFF; 
+    background-image: url("DK.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 	padding: 40px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
+    .read-content {
+      margin-top: 80px;
+     }
+
 }
 
+
+
 #faith5buttons {
-	
-	padding: 5px;
-	overflow: auto;
+	justify-content: center;
+  text-align: center;
+  width: 100%;
+	padding: 0px;
+  padding-bottom: 5px;
+  margin: 0px;
+  font-family: 'Shadows Into Light Two', cursive;
 }
 
 #share-pill {
-	background-color: #6F9CF7;
+	background-image: url("share.png");
+  background-color: #EBEBEB;
+  width: 50px;
+  height: 50px;
+  text-align: center;
 }
 
 #read-pill {
-	background-color: #67C867;
+	background-image: url("READ-5.png");
+  background-color: #EBEBEB;
+  width: 50px;
+  height: 50px;
+  margin-left: 3px;
+  text-align: center;
+  justify-content: center;
 }
 
 #talk-pill {
-	background-color: #009688;
+	background-image: url("TALK-4.png");
+  background-color: #EBEBEB;
+  width: 50px;
+  height: 50px;
+  margin-left: 3px;
 }
 
 #pray-pill {
-	background-color: #4958C8;
+	background-image: url("PRAY-3.png");
+  background-color: #EBEBEB;
+  width: 50px;
+  height: 50px;
+  margin-left: 3px;
 }
 
 #bless-pill {
-	background-color: #4A86E8;
+	background-image: url("BLESS-1.png");
+  background-color: #EBEBEB;
+  width: 50px;
+  height: 50px;
+  margin-left: 3px;
 }
 
 .nav-pills {
 	justify-content: center;
-}
+  text-align: center;
+  }
 .nav-pills li {
-    margin-left: 1%;
-
     a {
       color: white;
     }
@@ -208,10 +261,12 @@ body {
 }
 
 .medium-screen-links {
+  font-family: 'Roboto', sans-serif;
   margin-top: 30px;
 }
 
 .lg-screen-sidebar {
+  font-family: 'Roboto', sans-serif;
   margin-top: 30px;
   margin-right: 20px;
 

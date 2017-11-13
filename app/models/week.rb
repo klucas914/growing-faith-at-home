@@ -9,7 +9,7 @@ class Week < ApplicationRecord
   has_many :talks
   has_many :prays
   has_many :blesses
-  #belongs_to :season
+  belongs_to :season
   scope :current, -> { 
     where("(published_on < ?) AND 
            (archived_on > ?)", 

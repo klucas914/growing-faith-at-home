@@ -20,7 +20,7 @@
       <% @weeks.each do |week| %>
       <tr>
       <td><%= week.name %></td>
-      <td><%= week.published_on.strftime("%A, %e %B, %Y") %> - <%= week.archived_on.strftime("%A, %e %B, %Y") %></td>
+      <td><%= week.published_on.strftime("%e %B") %> - <%= week.archived_on.strftime("%e %B, %Y") %></td>
       <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
       </tr>

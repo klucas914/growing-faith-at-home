@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101071307) do
+ActiveRecord::Schema.define(version: 20171113022006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(version: 20171101071307) do
     t.string   "season"
     t.boolean  "queued",       default: false
     t.boolean  "published",    default: false
+    t.integer  "season_id"
+    t.index ["season_id"], name: "index_weeks_on_season_id", using: :btree
   end
 
   add_foreign_key "blesses", "weeks"
@@ -145,4 +147,5 @@ ActiveRecord::Schema.define(version: 20171101071307) do
   add_foreign_key "service_ideas", "weeks"
   add_foreign_key "shares", "weeks"
   add_foreign_key "talks", "weeks"
+  add_foreign_key "weeks", "seasons"
 end

@@ -7,11 +7,15 @@
   </div>
   <br>
   <div class="container-fluid">
+    <!--<div class="container">
+      <%#= button_to 'Add to Queue', add_to_queue_week_path(@week), class: "btn btn-success" %>
+    </div>-->
+    <br>
     <div class="card">
       <div class="card-block">
         <div class="row">
           <div class="col-sm-12">
-            <div class="container">Church Season:</div>
+            <div class="container">Church Season: <%= @week.season.church_season %></div>
             <div class="container">Publish Date: <%= @week.published_on.strftime("%A, %e %B, %Y")  %></div>
             <div class="container">Archive Date: <%= @week.archived_on.strftime("%A, %e %B, %Y")  %></div>
             <div class="container"><%= link_to 'Edit', edit_week_path(@week) %></div>

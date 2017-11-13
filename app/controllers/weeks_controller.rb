@@ -6,20 +6,24 @@ class WeeksController < ApplicationController
   
   def show
     @week = Week.find(params[:id])
+    @seasons = Season.all
   end
 
   def new
   	@week = Week.new
     @weeks = Week.where("queued IS FALSE").order('published_on ASC')
+    @seasons = Season.all
   end
 
   def edit
     @week = Week.find(params[:id])
+    @seasons = Season.all
   end
 
   def create
     @week = Week.new(week_params)
-
+    @seasons = Season.all
+    
     if @week.save
       redirect_to @week
     else
@@ -29,6 +33,7 @@ class WeeksController < ApplicationController
 
   def update
     @week = Week.find(params[:id])
+    @seasons = Season.all
     if @week.update(week_params)
     	redirect_to @week
     else
@@ -89,7 +94,7 @@ class WeeksController < ApplicationController
 
   private
     def week_params
-    	params.require(:week).permit(:name, :published_on, :archived_on)
+    	params.require(:week).permit(:name, :published_on, :archived_on, :season_id)
     end
 
 end

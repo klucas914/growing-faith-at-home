@@ -19,6 +19,8 @@
       <tr>
         <th>Week Name</th>
         <th>Publishing Dates</th>
+        <th>Season</th>
+        <th>Week Complete?</th>
         <th></th>
         <th></th>
         <!--<th></th>-->
@@ -27,11 +29,13 @@
       <% @weeks.each do |week| %>
       <tr>
 	      <td><%= week.name %></td>
-        <td><%= week.published_on.strftime("%A, %e %B, %Y") %> - <%= week.archived_on.strftime("%A, %e %B, %Y") %></td>
+        <td><%= week.published_on.strftime("%e %B") %> - <%= week.archived_on.strftime("%e %B, %Y") %></td>
+        <td><%= week.season.church_season %></td>
+        <td></td>
 	      <td><%= link_to 'Manage Week', week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
 	      <!--<td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-        <td><%= button_to 'Add to Queue', add_to_queue_week_path(week) %></td>
+        <td><%= button_to 'Add to Queue', add_to_queue_week_path(week), class: "btn btn-success" %></td>
       </tr>
       <% end %>
     </table>
