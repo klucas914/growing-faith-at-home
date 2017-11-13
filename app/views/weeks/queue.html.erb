@@ -23,7 +23,7 @@
 	    <td><%= week.name %></td>
 	    <td><%= week.published_on.strftime("%e %B") %> - <%= week.archived_on.strftime("%e %B, %Y") %></td>
       <td><%= week.season.church_season %></td>
-      <td><%= link_to 'Manage Week', week_path(week) %></td>
+      <td><%#= link_to 'Manage Week', week_path(week) %><%= link_to 'Manage Week', manage_weeks_queue_week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
       </tr>
       <% end %>

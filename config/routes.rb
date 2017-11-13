@@ -32,6 +32,9 @@ Rails.application.routes.draw do
       get :current_week
     end
     member do
+      get :manage_weeks_current
+    end
+    member do
       post :add_to_queue
     end
     member do
@@ -43,8 +46,14 @@ Rails.application.routes.draw do
     collection do
       get :queue
     end
+    member do
+      get :manage_weeks_queue
+    end
     collection do
       get :archives
+    end
+    member do
+      get :manage_weeks_archived
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

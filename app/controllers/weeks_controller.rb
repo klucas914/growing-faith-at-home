@@ -62,14 +62,28 @@ class WeeksController < ApplicationController
     @seasons = Season.all
   end
 
+  def manage_weeks_current
+    @week = Week.find(params[:id])
+    @seasons = Season.all
+  end
+
   def queue
     @weeks = Week.queue.where("queued IS TRUE").order('published_on ASC')
     @seasons = Season.all
- 
+  end
+
+  def manage_weeks_queue
+    @week = Week.find(params[:id])
+    @seasons = Season.all
   end
 
   def archives
     @weeks = Week.archived.where("queued IS TRUE").order('published_on DESC')
+    @seasons = Season.all
+  end
+
+  def manage_weeks_archived
+    @week = Week.find(params[:id])
     @seasons = Season.all
   end
 
