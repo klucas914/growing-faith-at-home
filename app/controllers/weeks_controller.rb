@@ -111,7 +111,18 @@ class WeeksController < ApplicationController
     end
 
   end
+  
+  def remove_from_queue
+    @week = Week.find(params[:id])
+    @seasons = Season.all
 
+    if @week.update(queued: false)
+      flash[:notice] = "#{@week.name} was successfully removed from the queue! Manage and view the week in New Weeks."
+      redirect_to queue_weeks_path
+    else
+      flash[:alert] = "There was an error removing this week to the queue. Please try again." 
+    end
+  end
   #def publish
    # @week = Week.find(params[:id])
     

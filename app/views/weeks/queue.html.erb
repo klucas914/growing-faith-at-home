@@ -17,6 +17,7 @@
         <th>Season</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
       <% @weeks.each do |week| %>
       <tr>
@@ -25,6 +26,7 @@
       <td><%= week.season.church_season %></td>
       <td><%#= link_to 'Manage Week', week_path(week) %><%= link_to 'Manage Week', manage_weeks_queue_week_path(week) %></td>
         <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
+        <td><%= button_to 'Remove from Queue', remove_from_queue_week_path(week), class: "btn btn-success" %></td>
       </tr>
       <% end %>
     </table>
