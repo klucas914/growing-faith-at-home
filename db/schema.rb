@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113100259) do
+ActiveRecord::Schema.define(version: 20171120021321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,10 +89,11 @@ ActiveRecord::Schema.define(version: 20171113100259) do
   create_table "reading_lists", force: :cascade do |t|
     t.datetime "day"
     t.integer  "week_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "verse"
     t.string   "title"
+    t.text     "scripture_text"
     t.index ["week_id"], name: "index_reading_lists_on_week_id", using: :btree
   end
 

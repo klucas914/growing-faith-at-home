@@ -21,6 +21,6 @@ class ReadingListsController < ApplicationController
 
   private
     def reading_list_params
-      params.require(:reading_list).permit(:day, :verse, :title)
+      params.require(:reading_list).permit(:day, :verse, :title, :scripture_text)
     end
 end
