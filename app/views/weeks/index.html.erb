@@ -1,47 +1,9 @@
-<h1>Welcome, Admin!</h1>
+<p>Welcome, Admin!</p>
 
-<h3>Notifications here</h3>
-
-<h4>Also a memory verse for the week?</h4>
-<!--<nav class="navbar navbar-toggleable-sm navbar-dark" id="MainNavBar">
-  <a class="navbar-brand">
-    Growing Faith at Home
-  </a>
-</nav>
-<br>
-
-<div class="row">
-  <div class="col-md-3">
-    <div clas="container-fluid">
-      <div><%= link_to 'Current Week' %></div>
-      <div><%= link_to 'New Weeks', new_week_path %></div>
-      <div><%= link_to 'Queued Weeks', queue_weeks_path %></div>
-      <div><%= link_to 'Archives', archives_weeks_path %></div>
-      <div><%= link_to 'Manage Pages' %></div>
-    </div>
-  </div>
-  <div class="col-md-9" >-->
-    
-    <!--<table class="table table-striped table-responsive" style="background-color: white;">
-      <tr>
-        <th>Week Name</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <% @weeks.each do |week| %>
-      <tr>
-	      <td><%= week.name %></td>
-	      <td><%= link_to 'Manage Week', week_path(week) %></td>
-        <td><%= link_to 'User View', mobile_view_week_path(week) %></td>
-	      <td><%= link_to 'Edit', edit_week_path(week) %></td>
-	      <td><%= link_to 'Delete', week_path(week), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= button_to 'Add to Queue' %></td>
-      </tr>
-      <% end %>
-    </table>-->
-  </div>
+<div class="container">
+Notices:
+<p id="notice"><%= notice %></p>
 </div>
+
+
 

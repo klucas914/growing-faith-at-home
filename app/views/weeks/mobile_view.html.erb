@@ -2,7 +2,7 @@
   <a class="navbar-brand">
     Growing Faith at Home
   </a>
-  <button class="d-md-none d-lg-none d-xl-none navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="d-lg-none d-xl-none navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -21,103 +21,109 @@
 </nav>
 <div class="conatiner-fluid">
   <div class="d-lg-none d-xl-none">
+  <!--<div class="d-none d-md-block d-lg-none d-xl-none">-->
     <div class="row">
-      <div class="col-sm-12 col-md-8 col-lg-7">
-      <br>
+      <!--<div class="col-sm-12 col-md-8 col-lg-7">-->
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+      <!--<br>-->
         <nav class="nav justify-content-center navbar-inverse sidebar" id="resource-nav" role="navigation">
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-12">
-                <h6>Weekly Resources:</h6>
-              </div>
-              <div class="col-lg-12">
                 <div class="navbar" id="bs-sidebar-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
+                  <div id="resource-accordion">
                     <div class="btn-group">
-                      <li>
-
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#readingList" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-bookmark fa-lg" aria-hidden="true"></i></button>
+                    <ul class="nav navbar-nav justify-content-center d-block" ">
+                      <li class="nav-item d-inline-block">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#readingList" data-parent="#resource-accordion" aria-expanded="false" aria-controls="readingList"><i class="fa fa-bookmark fa-lg" style="color:#9AC15E" aria-hidden="true"></i> Reading List</button>
+                      <!--</li>-->
+                      <li class="nav-item d-inline-block">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#creativeResponse" data-parent="#resource-accordion" aria-expanded="false" aria-controls="creativeResponse"><i class="fa fa-paint-brush fa-lg" style="color:#9AC15E" aria-hidden="true"></i> Creative Response</button>
                       </li>
-                      <li><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#creativeResponse" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-paint-brush fa-lg" aria-hidden="true"></i></button> 
+                      <li class="nav-item d-inline-block">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mealtimePrayer" data-parent="#resource-accordion" aria-expanded="false" aria-controls="mealtimePrayer"><i class="fa fa-cutlery fa-lg" style="color:#9AC15E" aria-hidden="true"></i> Mealtime Prayer</button>
                       </li>
-                      <li ><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mealtimePrayer" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></button>
+                      <li class="nav-item d-inline-block">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#serviceIdea" data-parent="#resource-accordion" aria-expanded="false" aria-controls="serviceIdea"><i class="fa fa-handshake-o fa-lg" style="color:#9AC15E" aria-hidden="true"></i> Service Idea</button>
                       </li>
-                      <li ><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#serviceIdea" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-handshake-o fa-lg" aria-hidden="true"></i></button>
-                      </li>
+                    </ul>
                     </div>
-                    <div class="collapse" id="readingList">
-                    <br>
-                      <div class="card card-block">
-                        <div class="response-card">
-                          <div class="card-title">
-                            <h5>Reading List</h5>
-                          </div>
-                          <table class="table table-striped table-responsive">
-                            <tr>
-                              <th>Date</th>
-                              <th>Verse</th>
-                              <th>Title</th>
-                            </tr>
-                            <tr>
-                              <% @week.reading_lists.each do |reading_list| %>
+                    <div class="accordion-group">
+                      <div class="collapse" id="readingList">
+                        <div class="card card-block">
+                          <div class="response-card">
+                            <div class="card-title">
+                              <h5>Reading List</h5>
+                            </div>
+                            <table class="table table-striped table-responsive">
+                              <tr>
+                                <th>Date</th>
+                                <th>Verse</th>
+                                <th>Title</th>
+                              </tr>
+                              <tr>
+                                <% @week.reading_lists.each do |reading_list| %>
                                 <td><%= reading_list.day.strftime("%A, %e %B") %></td>
                                 <td><%= reading_list.verse %></td>
                                 <td><%= reading_list.title %></td>
-                            </tr>
+                              </tr>
+                                <% end %>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="collapse" id="creativeResponse"><br>
+                        <div class="card card-block">
+                          <div class="response-card">
+                            <h5>Creative Response</h5>
+                              <% @week.creative_responses.each do |creative_response| %>
+                              <%= creative_response.response %>
                             <% end %>
-                          </table>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="collapse" id="creativeResponse"><br>
-                      <div class="card card-block">
-                        <div class="response-card">
-                          <h5>Creative Response</h5>
-                            <% @week.creative_responses.each do |creative_response| %>
-                            <%= creative_response.response %>
-                          <% end %>
+                      <div class="collapse" id="mealtimePrayer"><br>
+                        <div class="card card-block">
+                          <div class="response-card">
+                            <h5>Mealtime Prayer</h5>
+                              <% @week.mealtime_prayers.each do |mealtime_prayer| %>
+                               <%= mealtime_prayer.mealtime_prayer %>
+                              <% end %>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="collapse" id="mealtimePrayer"><br>
-                      <div class="card card-block">
-                        <div class="response-card">
-                          <h5>Mealtime Prayer</h5>
-                            <% @week.mealtime_prayers.each do |mealtime_prayer| %>
-                             <%= mealtime_prayer.mealtime_prayer %>
+                      <div class="collapse" id="serviceIdea"><br>
+                        <div class="card card-block">
+                          <div class="response-card">
+                            <h5>Service Idea</h5>
+                            <% @week.service_ideas.each do |service_idea| %>
+                              <%= service_idea.idea %>
                             <% end %>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="collapse" id="serviceIdea"><br>
-                      <div class="card card-block">
-                        <div class="response-card">
-                          <h5>Service Idea</h5>
-                          <% @week.service_ideas.each do |service_idea| %>
-                            <%= service_idea.idea %>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  </ul>
+                  </div>    
                 </div>
               </div>
             </div>
           </div>
         </nav>
       </div>
-      <div class="d-none d-md-block col-md-4" style="background-color: #ddd">
+      
+      <!--<div class="d-none d-md-block col-md-4" style="background-color: #ddd">
         <div class="medium-screen-links">
           <p><%= link_to 'Search Resource Archives' %></p>
           <p><%= link_to 'About Grow Ministries' %></p>
           <p><%= link_to 'How to Use Growing Faith at Home' %></p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
   <!--</div>-->
   <div class="row">
-    <div class="col-xs-12 col-md-8 col-lg-7" id="main">
+    <div class="col-md-12 col-lg-8" id="main">
+    <!--<div class="col-xs-12 col-md-8 col-lg-7" id="main">-->
       <div class="container-fluid"><br>
         <div align="center">
           <div class="mv_box">
@@ -171,11 +177,12 @@
             </div>
             <div class="tab-pane" id="read" role="tabpanel">
               <div class="read-content">
+              <p>Slide right to find today's reading.</p>
                 <div class="container-fluid">
                 <div class="row flex-row flex-nowrap">
                 <% @week.reading_lists.each do |reading_list| %>
                   <div class="col-12">  
-                    <div class="card card-bloc">
+                    <div class="container" style="width:100%">
                       <div class="container">
                         <h6><%= reading_list.day.strftime("%A, %e %B") %></h6>
                         <h6><%= reading_list.title %></h6>
@@ -226,18 +233,19 @@
       </div>
     </div>
   </div>
-  <div class="d-lg-none d-xl-none d-none d-md-block col-md-4" style="background-color: #ddd">
-  </div> 
-  <div class="d-none d-lg-block col-md-4 col-lg-5" style="background-color: #ddd">
+  <!--<div class="d-lg-none d-xl-none d-none d-md-block col-md-4" style="background-color: #9AC15E;">
+  </div> -->
+  <div class="d-none d-lg-block col-lg-4" style="background-color: #ddd;">
     <div class="lg-screen-sidebar">
-      <p>Weekly Resources:</p>
+     
+      <div class="container-fluid" style="margin-left:-10px; margin-right:0px; width:100%;">
+      <p style="font-size: 100%;">Weekly Resources:</p>
         <div id="accordion" role="tablist" aria-multiselectable="true">
           <div class="card">
             <div class="card-header" role="tab" id="headingOne">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  <i class="fa fa-bookmark"></i>   Reading List
+                  <i class="fa fa-bookmark fa-lg" style="color:#9AC15E"></i>    Reading List
                 </a>
-              </h5>
             </div>
 
     <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -266,9 +274,8 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingTwo">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          <i class="fa fa-paint-brush" aria-hidden="true"></i>   Creative Response
+          <i class="fa fa-paint-brush fa-lg" style="color:#9AC15E" aria-hidden="true"></i>    Creative Response
         </a>
-      </h5>
     </div>
     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="card-block">
@@ -285,8 +292,7 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <i class="fa fa-cutlery" aria-hidden="true"></i>   Mealtime Prayer</a>
-      </h5>
+          <i class="fa fa-cutlery fa-lg" style="color:#9AC15E" aria-hidden="true"></i>    Mealtime Prayer</a>
     </div>
     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="card-block">
@@ -301,8 +307,7 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingFour">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          <i class="fa fa-handshake-o" aria-hidden="true"></i>   Service Idea</a>
-      </h5>
+          <i class="fa fa-handshake-o fa-lg" style="color:#9AC15E" aria-hidden="true"></i>    Service Idea</a>
     </div>
     <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="card-block">
@@ -315,15 +320,18 @@
     </div>
   </div>
 </div>
-    <div class="large-screen-links">
+</div>
+<div class="container-fluid" style="margin-left:-10px; margin-top:0px; margin-right:-20px;"> 
+  <div class="large-screen-links">
       <p><%= link_to 'Search Resource Archives' %></p>
       <p><%= link_to '4 Keys' %></p>
       <p><%= link_to 'About Grow Ministries' %></p>
       <p><%= link_to 'How to Use Growing Faith at Home' %></p>
       <p><%= link_to 'Search Upcoming Content' %></p>
     </div>
-    </div>
+   </div>
   </div>
+</div>
   <br>
   <br>
 </div>

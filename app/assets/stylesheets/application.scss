@@ -74,7 +74,8 @@ body {
 }
 
 .mv_box {
-	background-color: #9AC15E;
+	background-color: #009D75;
+  //background-color: #9AC15E;
 	width: 90%; 
 	padding: 15px;
 	text-align: center;
@@ -87,21 +88,30 @@ body {
   color: white;
 }
 
-.btn-group {
-	justify-content: center;
-	text-align: center;
-
-	.btn {
-	  width: 70px;
-	  height: 70px;
-    border: 0px;
-    border-radius: 35px;
-	  margin-bottom: 5px;
-	  background-color: #009D75;
-	  padding: 20px;
-	  margin-left: 5px;
-    box-shadow: none;
-	}
+#resource-accordion {
+  .btn-group {
+	//justify-content: center;
+  text-align: center;
+  font-family:'Shadows Into Light Two', cursive; 
+  font-size: 75%;
+  display: flex;
+    .btn {
+	    //width: 70px;
+	    //height: 70px;
+      border: 0px;
+      //border-radius: 35px;
+	    //margin-bottom: 5px;
+      background-color: white;
+      //background-color: #9AC15E;
+      //background-color: #009D75;
+	    //padding: 20px;
+	    //margin-left: 5px;
+      box-shadow: none;
+      color: black;
+      font-size:100%;
+      flex: 1;
+	  }
+  }
 }
 
 #bs-sidebar-navbar-collapse-1 {
@@ -120,60 +130,72 @@ body {
     background-image: url("CC2.png");
     background-size: contain;
     background-repeat: no-repeat;
-	padding: 40px;
+  padding-left: 50px;
+  padding-right: 30px;
+  padding-top: 10px;
+
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
 }
 
 #talk {
+  font-family: 'Shadows Into Light Two', cursive;
   border: 10px solid #ddd;
   background-image: url("DK.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #FFFFFF; 
-  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
 }
 
 #pray {
+    font-family: 'Shadows Into Light Two', cursive;
     border: 10px solid #ddd;
     background-color: #FFFFFF;
     background-image: url("RT.png");
     background-size: contain; 
     background-repeat: no-repeat;
-	padding: 40px;
+	padding-left: 50px;
+  padding-right: 50px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
 }
 
 #bless {
+    font-family: 'Shadows Into Light Two', cursive;
     border: 10px solid #ddd;
     background-color: #FFFFFF; 
     background-image: url("RT.png");
     background-size: contain; 
     background-repeat: no-repeat;
-	padding: 40px;
+	padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
 }
 
 #read {
-    border: 10px solid #ddd;
-    background-color: #FFFFFF; 
-    background-image: url("DK.png");
+  
+  border: 10px solid #ddd;
+  background-color: #FFFFFF; 
+  //background-image: url("DK.png");
   background-size: contain;
   background-repeat: no-repeat;
-	padding: 40px;
+	//padding: 40px;
 	width: 100%;
 	height: 400px;
 	overflow-y: scroll;
     .read-content {
-      margin-top: 80px;
+      margin-top: 10px;
      }
 
 }
@@ -181,7 +203,7 @@ body {
 
 
 #faith5buttons {
-	justify-content: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
 	padding: 0px;
@@ -268,12 +290,20 @@ body {
 .lg-screen-sidebar {
   font-family: 'Roboto', sans-serif;
   margin-top: 30px;
-  margin-right: 20px;
+  //margin-right: 20px;
 
 
     .large-screen-links {
       margin-top: 30px;
     }
+}
+
+#accordion {
+  font-family: 'Shadows Into Light Two', cursive;
+
+  .a {
+    font-color: black;
+  }
 }
 
 .new-weeks-container {
