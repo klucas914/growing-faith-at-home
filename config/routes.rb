@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :pages
-  root 'weeks#index'
+  root 'weeks#current'
   namespace :api do
     namespace :vi do
       resources :memory_verses
@@ -28,9 +28,11 @@ Rails.application.routes.draw do
     end
     member do
       get :mobile_view
+
     end
     collection do 
       get :current_week
+      get :current
     end
     member do
       get :manage_weeks_current
@@ -61,6 +63,9 @@ Rails.application.routes.draw do
     end
     member do
       get :user_view_archived
+      get :user_view_current
+      get :user_view_queue
+      get :user_view_new
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

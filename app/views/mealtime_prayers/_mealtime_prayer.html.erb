@@ -1,6 +1,11 @@
 <div class="container">
-  <p><%= mealtime_prayer.mealtime_prayer %>
-  <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [mealtime_prayer.week, mealtime_prayer],
+  <%= form_for [mealtime_prayer.week, mealtime_prayer] do |f| %>
+  <%= f.text_area :mealtime_prayer, class: 'form-control edit-mealtime_prayer' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [mealtime_prayer.week, mealtime_prayer],
                method: :delete,
                data: { confirm: 'Are you sure?' } %></p>
+   <% end %>
+  
+  
 </div>

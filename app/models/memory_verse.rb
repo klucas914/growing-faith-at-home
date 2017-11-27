@@ -1,3 +1,3 @@
 class MemoryVerse < ApplicationRecord
-  #belongs_to :week
+  belongs_to :week
 end

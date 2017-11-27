@@ -1,6 +1,11 @@
 <div class="container">
- <%= memory_verse.verse_address %>:  
- <%= memory_verse.text %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete' %>
- <%#= link_to 'Delete Memory Verse', [memory_verse.week, memory_verse], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= form_for [memory_verse.week, memory_verse] do |f| %>
+  <%= f.text_area :verse_address, class: 'form-control edit-memory_verse' %>
+  <%= f.text_area :text, class: 'form-control edit-memory_verse' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [memory_verse.week, memory_verse],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></p>
+   <% end %>
 </div>
 

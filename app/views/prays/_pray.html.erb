@@ -1,5 +1,11 @@
 <div class="container">
-  <%= pray.prayer %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [pray.week, pray],
+  <%= form_for [pray.week, pray] do |f| %>
+  <%= f.text_area :prayer, class: 'form-control edit-pray' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [pray.week, pray],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %>
 </div>
+
+

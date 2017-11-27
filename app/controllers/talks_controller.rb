@@ -5,6 +5,17 @@ class TalksController < ApplicationController
     redirect_to week_path(@week)
   end
 
+  def update
+    @week = Week.find(params[:week_id])
+    @talk = @week.talks.find(params[:id])
+ 
+    if @talk.update(talk_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @week = Week.find(params[:week_id])
     @talk = @week.talks.find(params[:id])

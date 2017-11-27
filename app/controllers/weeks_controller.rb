@@ -1,5 +1,5 @@
 class WeeksController < ApplicationController
-  layout "admin", except: [:mobile_view]
+  layout "admin", except: [:current]
   def index
   	@weeks = Week.all
   end
@@ -58,8 +58,23 @@ class WeeksController < ApplicationController
   end
 
   def current_week
-    @weeks = Week.current.where("queued IS TRUE")
+    @weeks = Week
+      .current
+      .where("queued IS TRUE")
     @seasons = Season.all
+  end
+
+  def current
+    week = Week
+      .current
+      .where("queued IS TRUE")
+      .order('published_on ASC, id ASC')
+      .first
+    if week
+      redirect_to mobile_view_week_path(week)
+    else
+      render :current
+    end  
   end
 
   def manage_weeks_current
@@ -68,7 +83,10 @@ class WeeksController < ApplicationController
   end
 
   def queue
-    @weeks = Week.queue.where("queued IS TRUE").order('published_on ASC')
+    @weeks = Week
+      .queue
+      .where("queued IS TRUE")
+      .order('published_on ASC, id ASC')
     @seasons = Season.all
   end
 

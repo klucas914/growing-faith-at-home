@@ -1,5 +1,9 @@
 <div class="container">
-  <%= talk.question %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [talk.week, talk],
+   <%= form_for [talk.week, talk] do |f| %>
+  <%= f.text_area :question, class: 'form-control edit-talk' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [talk.week, talk],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %>
 </div>

@@ -1,6 +1,24 @@
 <div class="container">
-  <%= share.questions %> <%= link_to 'Edit', edit_week_share_path(share.week, share) %> | <%= link_to 'Delete', [share.week, share],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+  <div class="row">
+    <div class="edit-share">
+      <div class="content">
+      <%= form_for [share.week, share] do |f| %>
+        <%= f.text_area :questions, class: 'form-control edit-share' %>
+      </div>
+      <div class="content-edit-buttons">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-floppy-o fa-lg"></i>
+          </button>
+          <!--<%#= f.submit "Update", class: 'btn btn-primary' %>-->
+          <%= link_to "Delete", [share.week, share],
+          method: :delete,
+          data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>     
+      </div> 
+     <% end %>
+    </div>
+  </div>
 </div>
 
+<!--<button type="button" class="btn btn-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>-->

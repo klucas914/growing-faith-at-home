@@ -9,6 +9,17 @@ class CreativeResponsesController < ApplicationController
     redirect_to week_path(@week)
   end
 
+  def update
+    @week = Week.find(params[:week_id])
+    @creative_response = @week.creative_responses.find(params[:id])
+ 
+    if @creative_response.update(creative_response_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @week = Week.find(params[:week_id])
     @creative_response = @week.creative_responses.find(params[:id])

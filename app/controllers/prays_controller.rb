@@ -5,6 +5,17 @@ class PraysController < ApplicationController
     redirect_to week_path(@week)
   end
 
+  def update
+    @week = Week.find(params[:week_id])
+    @pray = @week.prays.find(params[:id])
+ 
+    if @pray.update(pray_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @week = Week.find(params[:week_id])
     @pray = @week.prays.find(params[:id])

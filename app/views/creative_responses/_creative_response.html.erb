@@ -1,6 +1,9 @@
 <div class="container">
-<p><%= creative_response.response %></p>
-<%= link_to 'Edit' %>  |  <%= link_to 'Delete', [creative_response.week, creative_response],
+ <%= form_for [creative_response.week, creative_response] do |f| %>
+  <%= f.text_area :response, class: 'form-control edit-creative_response' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [creative_response.week, creative_response],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %> 
 </div>

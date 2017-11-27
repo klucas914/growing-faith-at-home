@@ -5,6 +5,17 @@ class BlessesController < ApplicationController
     redirect_to week_path(@week)
   end
 
+  def update
+    @week = Week.find(params[:week_id])
+    @bless = @week.blesses.find(params[:id])
+ 
+    if @bless.update(bless_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @week = Week.find(params[:week_id])
     @bless = @week.blesses.find(params[:id])

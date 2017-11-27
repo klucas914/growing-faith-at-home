@@ -1,5 +1,9 @@
 <div class="container">
-  <%= bless.blessing %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [bless.week, bless],
+   <%= form_for [bless.week, bless] do |f| %>
+  <%= f.text_area :blessing, class: 'form-control edit-bless' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [bless.week, bless],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %> 
 </div>

@@ -17,6 +17,7 @@
 @import "font-awesome";
 
 
+
 body {
 	height: 100%;
 	background: #EBEBEB;
@@ -81,6 +82,7 @@ body {
 	text-align: center;
 	margin-bottom: -10px;
 	padding-bottom: 5px;
+
 }	
 
 .memory_verses {
@@ -210,6 +212,7 @@ body {
   padding-bottom: 5px;
   margin: 0px;
   font-family: 'Shadows Into Light Two', cursive;
+  display: inline-block;
 }
 
 #share-pill {
@@ -290,8 +293,12 @@ body {
 .lg-screen-sidebar {
   font-family: 'Roboto', sans-serif;
   margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
   //margin-right: 20px;
-
+    .card.a{
+      color: black;
+    }
 
     .large-screen-links {
       margin-top: 30px;
@@ -441,4 +448,22 @@ body {
   transition-timing-function: ease-out;
 }
 
+.edit-share:focus {
+  width: 75%;
+}
 
+.page-title {
+  background-color: white;
+  width: 70%;
+  text-align: center;
+  font-size: 200%;
+  padding: 20px;
+}
+
+.page-content {
+  background-color: white;
+  width: 70%;
+  text-align: center;
+  font-size: 100%;
+  padding: 20px;
+}

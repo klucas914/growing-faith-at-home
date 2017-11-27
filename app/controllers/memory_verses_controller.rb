@@ -6,6 +6,14 @@ class MemoryVersesController < ApplicationController
   end
 
   def update
+    @week = Week.find(params[:week_id])
+    @memory_verse = @week.memory_verses.find(params[:id])
+ 
+    if @memory_verse.update(memory_verse_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
   end
 
   def index

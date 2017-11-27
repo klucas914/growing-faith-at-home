@@ -1,5 +1,9 @@
 <div class="container">
-  <%= service_idea.idea %> <%= link_to 'Edit' %>  |  <%= link_to 'Delete', [service_idea.week, service_idea],
+   <%= form_for [service_idea.week, service_idea] do |f| %>
+  <%= f.text_area :idea, class: 'form-control edit-service_idea' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <%= link_to 'Delete', [service_idea.week, service_idea],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+   <% end %>
 </div>
