@@ -1,5 +1,5 @@
 class WeeksController < ApplicationController
-  layout "admin", except: [:current]
+  layout "admin", except: [:current, :mobile_view]
   def index
   	@weeks = Week.all
   end

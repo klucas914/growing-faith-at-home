@@ -148,6 +148,8 @@
           <div class="tab-content">
             <div class="tab-pane active" id="share" role="tabpanel">
               <div class="container">
+                <br>
+                <br>
                 <h3>Share</h3><br>
                 <% @week.shares.each do |share| %>
                   <p><%= share.questions %></p><br>
@@ -156,15 +158,18 @@
             </div>
             <div class="tab-pane" id="read" role="tabpanel">
               <div class="read-content">
-              <p>Slide right to find today's reading.</p>
+              <p style="font-size: 75%">Slide right to find today's reading.</p>
                 <div class="container-fluid">
                 <div class="row flex-row flex-nowrap">
                 <% @week.reading_lists.each do |reading_list| %>
                   <div class="col-12">  
                     <div class="container" style="width:100%">
+                    <h3>Read</h3>
+                      <br>
                       <div class="container">
                         <h6><%= reading_list.day.strftime("%A, %e %B") %></h6>
                         <h6><%= reading_list.title %></h6>
+                        <br>
                         <p><%= reading_list.verse %></p>
                         <p><%= reading_list.scripture_text %></p>
                       </div>
@@ -179,8 +184,7 @@
               <div class="container">
                 <br>
                 <br>
-                <br>
-                <br>
+                
                 <h3>Talk</h3><br>
                 <% @week.talks.each do |talk| %>
                   <p><%= talk.question %></p><br>
