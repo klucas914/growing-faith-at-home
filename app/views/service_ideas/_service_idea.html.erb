@@ -1,9 +1,19 @@
 <div class="container">
-   <%= form_for [service_idea.week, service_idea] do |f| %>
-  <%= f.text_area :idea, class: 'form-control edit-service_idea' %>
-  <%= f.submit "Update", class: 'btn btn-primary' %>
-  <%= link_to 'Delete', [service_idea.week, service_idea],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-   <% end %>
+  <div class="row">
+    <%= form_for [service_idea.week, service_idea] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :idea, class: 'form-control edit-service_idea' %>
+      </div>
+
+      <div class="text-right">
+        <%= f.button class: 'btn btn-primary', title: "Save" do %>
+          <i class="fa fa-floppy-o fa-lg"></i>
+        <% end %>
+
+        <%= link_to [service_idea.week, service_idea], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', title: "Delete" do %>
+          <i class="fa fa-remove fa-lg"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

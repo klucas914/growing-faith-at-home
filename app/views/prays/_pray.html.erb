@@ -1,11 +1,19 @@
 <div class="container">
-  <%= form_for [pray.week, pray] do |f| %>
-  <%= f.text_area :prayer, class: 'form-control edit-pray' %>
-  <%= f.submit "Update", class: 'btn btn-primary' %>
-  <%= link_to 'Delete', [pray.week, pray],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-   <% end %>
+  <div class="row">
+    <%= form_for [pray.week, pray] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :prayer, class: 'form-control edit-pray' %>
+      </div>
+
+      <div class="text-right">
+        <%= f.button class: 'btn btn-primary', title: "Save" do %>
+          <i class="fa fa-floppy-o fa-lg"></i>
+        <% end %>
+
+        <%= link_to [pray.week, pray], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', title: "Delete" do  %>
+          <i class="fa fa-remove fa-lg"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-

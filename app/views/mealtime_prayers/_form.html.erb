@@ -2,7 +2,10 @@
   <div class="form-group">
     <%= f.text_area :mealtime_prayer, class: "form-control" %>
   </div>
-  <div class="action">
-    <%= f.submit %>
+
+  <div class="action text-right">
+    <%= f.button class: 'btn btn-success', title: 'Add' do %>
+      <i class="fa fa-plus fa-lg"></i>
+    <% end %>
   </div>
 <% end %>
