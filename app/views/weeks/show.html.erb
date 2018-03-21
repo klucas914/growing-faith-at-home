@@ -47,8 +47,17 @@
                 <td><%= reading_list.day.strftime("%A, %e %B") %></td>
                 <td><%= reading_list.verse %></td>
                 <td><%= reading_list.title %></td>  
-                <td><%= link_to 'Edit' %> | <%= link_to 'Delete', reading_list_path(reading_list), method: :delete,
-               data: { confirm: 'Are you sure?' } %></td>
+                <td> 
+                  <div class="text-right">
+                    <%= button_to 'Edit', class: 'btn btn-primary', title: "Save" do %>
+                      <i class="fa fa-floppy-o fa-xs"></i>
+                    <% end %>
+                  
+                    <%= link_to [reading_list.week, reading_list], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', title: "Delete" do %>
+                      <i class="fa fa-remove fa-xs"></i>
+                    <% end %>
+                  </div>
+                </td>
               </tr>
               <% end %>
             </table>

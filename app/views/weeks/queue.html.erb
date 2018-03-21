@@ -25,7 +25,7 @@
 	    <td><%= week.published_on.strftime("%e %B") %> - <%= week.archived_on.strftime("%e %B, %Y") %></td>
       <td><%= week.season.church_season %></td>
       <td><%= link_to 'Manage Week', manage_weeks_queue_week_path(week) %></td>
-        <td><%= link_to 'User View', user_view_queue_week_path(week) %></td>
+        <td><%= link_to 'User View', mobile_view_week_path(week), target: "_blank"  %></td>
         <td><%= button_to 'Remove from Queue', remove_from_queue_week_path(week), class: "btn btn-danger" %></td>
       </tr>
       <% end %>
