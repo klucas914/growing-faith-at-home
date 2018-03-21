@@ -72,9 +72,11 @@
                 <div class="card card-block">
                   <div class="response-card">
                     <h5>Creative Response</h5>
+                    <div id="CR">
                     <% @week.creative_responses.each do |creative_response| %>
                       <%= creative_response.response %>
                     <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -263,9 +265,11 @@
             <div class="card-block">
               <div class="card card-block">
                 <div class="response-card">
+                <div id="CR">
                  <% @week.creative_responses.each do |creative_response| %>
                  <%= creative_response.response %>
                  <% end %>
+                 </div>
                 </div>
               </div>
             </div>
@@ -305,11 +309,11 @@
     </div>
     <div class="container-fluid" style="margin-left:-10px; margin-top:0px; margin-right:-20px;"> 
       <div class="large-screen-links">
-        <ul><%= link_to 'Search Resource Archives' %></ul>
+        <ul><%#= link_to 'Search Resource Archives' %></ul>
         <ul><%= link_to '4 Keys' %></ul>
         <ul><%= link_to 'About Grow Ministries' %></ul>
         <ul><%= link_to 'How to Use Growing Faith at Home' %></ul>
-        <ul><%= link_to 'Search Upcoming Content' %></ul>
+        <ul><%#= link_to 'Search Upcoming Content' %></ul>
       </div>
     </div>
   </div>

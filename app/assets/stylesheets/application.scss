@@ -49,8 +49,8 @@ body {
 	padding: 1%;
 	
 	h6 {
-	  padding-top: 5px;
-	  margin-left: 5px;
+	  //padding-top: 5px;
+	  //margin-left: 5px;
 	}
 	
 }
@@ -285,6 +285,10 @@ body {
   width: 100%;
   border: 10px solid #ddd;
   padding: 2%;
+}
+
+#CR {
+  white-space: pre-wrap;
 }
 
 .medium-screen-links {
