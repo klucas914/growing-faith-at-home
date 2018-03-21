@@ -329,6 +329,10 @@ body {
   margin-left: 10px;
 }
 
+form {
+  width: 100%;
+}
+
 #sidebar {
     overflow: hidden;
     z-index: 3;
@@ -472,4 +476,8 @@ body {
   text-align: center;
   font-size: 100%;
   padding: 20px;
+}
+
+.content-edit-buttons {
+  text-align: right;
 }
