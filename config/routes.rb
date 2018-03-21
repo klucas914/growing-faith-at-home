@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: { sessions: "admins/sessions"}
   resources :pages
   root 'weeks#current'
   namespace :api do

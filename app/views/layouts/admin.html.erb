@@ -15,9 +15,20 @@
   <a class="navbar-brand" href="<%= weeks_path %>">
     <img src="/assets/images/GFAH.png" width="30" height="30" class="d-inline-block align-top" alt="">Growing Faith at Home
   </a>
-</nav>
 
+<p class="navbar-text pull-right">
+<% if admin_signed_in? %>
+  Logged in as <%= current_admin.email %>
+  <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%#= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %> 
+  <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+</nav>
 <!--sidebar-->
+<% if admin_signed_in? %>
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
         <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
@@ -32,6 +43,10 @@
         <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
             <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
             <hr>
+<% else %>
+    <div align="center">
+    <br>            
+<% end %>
              <%= yield %>
             
         </main>

@@ -1,4 +1,5 @@
 class WeeksController < ApplicationController
+  before_action :authenticate_admin!, except: [:current, :mobile_view]
   layout "admin", except: [:current, :mobile_view]
   def index
   	@weeks = Week.all

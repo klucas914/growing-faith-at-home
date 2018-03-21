@@ -1,3 +1,6 @@
+<% if admin_signed_in? %>
+ <nav><%= link_to "Go to Admin Dashboard", weeks_path %></nav>
+<% end %>
 <nav class="navbar navbar-toggleable-sm navbar-dark" id="MainNavBar">
   <a class="navbar-brand">
     Growing Faith at Home
