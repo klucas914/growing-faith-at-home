@@ -6,6 +6,17 @@ class ReadingListsController < ApplicationController
   def new
   end
   
+  def update
+    @week = Week.find(params[:week_id])
+    @reading_list = @week.reading_lists.find(params[:id])
+ 
+    if @reading_list.update(readig_list_params)
+      redirect_to week_path(@week)
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @week = Week.find(params[:week_id])
     @reading_list= @week.reading_lists.create(reading_list_params)

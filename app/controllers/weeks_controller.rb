@@ -76,6 +76,7 @@ class WeeksController < ApplicationController
     else
       render :current
     end  
+    @seasons = Season.all
   end
 
   def manage_weeks_current
