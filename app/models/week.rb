@@ -1,5 +1,5 @@
 class Week < ApplicationRecord
-  has_many :reading_lists
+  has_many :reading_lists 
   has_many :faith5s
   has_many :service_ideas
   has_many :creative_responses
@@ -17,5 +17,6 @@ class Week < ApplicationRecord
   }
   scope :archived, -> { where("archived_on <?", Time.now)}
   scope :queue, -> { where("published_on >?", Time.now)}
+
 
 end

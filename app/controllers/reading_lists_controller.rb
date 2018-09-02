@@ -5,12 +5,17 @@ class ReadingListsController < ApplicationController
   
   def new
   end
+
+  def edit
+    @week = Week.find(params[:week_id])
+    @reading_list = @week.reading_lists.find(params[:id])
+  end
   
   def update
     @week = Week.find(params[:week_id])
     @reading_list = @week.reading_lists.find(params[:id])
  
-    if @reading_list.update(readig_list_params)
+    if @reading_list.update(reading_list_params)
       redirect_to week_path(@week)
     else
       render 'edit'
