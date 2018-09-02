@@ -35,6 +35,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'react-rails'
 gem 'font-awesome-sass'
 gem 'devise'
+gem 'sprockets', '~>3.7.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
